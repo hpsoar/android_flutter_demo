@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/flutter_demo/.android/Flutter/flutter.iml" filepath="$PROJECT_DIR$/flutter_demo/.android/Flutter/flutter.iml" />
       <module fileurl="file://$PROJECT_DIR$/flutter_hybride_demo.iml" filepath="$PROJECT_DIR$/flutter_hybride_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/flutter_utils/flutter_utils.iml" filepath="$PROJECT_DIR$/flutter_utils/flutter_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/widgets/widgets.iml" filepath="$PROJECT_DIR$/widgets/widgets.iml" />
     </modules>
   </component>
 </project>
