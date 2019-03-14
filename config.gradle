@@ -1,0 +1,18 @@
+ext {
+    depend = [
+    ]
+    androids = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 17,
+            targetSdkVersion : 28,
+            buildToolsVersion: "28.0.3"
+    ]
+
+    app = [
+            online     : true,
+            versionCode: 1000,
+            versionName: "1.0.0",
+            flavor     : "normal"
+    ]
+}
+
