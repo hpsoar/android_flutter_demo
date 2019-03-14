@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/flutter_hybride_demo.iml" filepath="$PROJECT_DIR$/flutter_hybride_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/flutter_utils/flutter_utils.iml" filepath="$PROJECT_DIR$/flutter_utils/flutter_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/widgets/widgets.iml" filepath="$PROJECT_DIR$/widgets/widgets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/widgets/widgets.iml" filepath="$PROJECT_DIR$/widgets/widgets.iml" />
     </modules>
   </component>
 </project>
