@@ -10,10 +10,10 @@
 - setup existing project
   - udpate `settings.gradle`
     - ref: https://github.com/hpsoar/android_flutter_demo/blob/master/settings.gradle
-    - note: use `settingsDir` or `settingsDir.parentFile` depends on you put `flutter_demo` inside or beside existing project
+    - `NOTE`: use `settingsDir` or `settingsDir.parentFile` depends on you put `flutter_demo` inside or beside existing project
   - update 'app/build.gradle
     - ref: https://github.com/hpsoar/android_flutter_demo/blob/master/app/build.gradle
-    - note: 
+    - `NOTE`: 
       - flutter & flutter_utils are set in https://github.com/hpsoar/android_flutter_demo/blob/master/config.gradle
       - you can also ref the two directly by `implementation project(':flutter')` and `implementation project(':flutter_utils'),`
       - :flutter is the android project generated in flutter_demo when you create the project
