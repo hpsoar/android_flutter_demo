@@ -1,7 +1,7 @@
 # android_flutter_demo
-## demonstrates how to integrate flutter to existing code
+- demonstrates how to integrate flutter to existing code
 
-## Steps
+## Get Started
 - create flutter module
   - `flutter create -t module flutter_demo`
   - you can put `flutter_demo` inside `android_flutter_demo` or beside `android_flutter_demo`
