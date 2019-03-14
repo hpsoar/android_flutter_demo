@@ -1,3 +1,6 @@
 [submodule "flutter_demo"]
 	path = flutter_demo
 	url = https://github.com/hpsoar/flutter_demo.git
+[submodule "flutter_utils"]
+	path = flutter_utils
+	url = https://github.com/hpsoar/flutter_android.git
