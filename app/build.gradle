@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion androids['compileSdkVersion']
+
     defaultConfig {
         applicationId "me.lattern.flutter_hybride_demo"
         minSdkVersion androids['minSdkVersion']

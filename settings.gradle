@@ -1,1 +1,10 @@
-include ':app'
+include ':app', ':flutter_utils'
+
+// setup flutter
+setBinding(new Binding([gradle: this]))
+
+// path to flutter android config
+evaluate(new File(
+        settingsDir,
+        'flutter_demo/.android/include_flutter.groovy'
+))
