@@ -16,6 +16,6 @@
     - `NOTE`: 
       - flutter & flutter_utils are set in https://github.com/hpsoar/android_flutter_demo/blob/master/config.gradle
       - you can also ref the two directly by `implementation project(':flutter')` and `implementation project(':flutter_utils'),`
-      - :flutter is the android project generated in flutter_demo when you create the project
-      - :flutter_utils is project for utils that make flutter easier to use in exsiting android project, you can go without it
+      - `:flutter` is the android project generated in flutter_demo when you create the project
+      - `:flutter_utils` is project for utils that make flutter easier to use in exsiting android project, you can go without it
       - one more thing, if you accidentally removed flutter_demo/.android or flutter_demo/.ios, run `flutter packages get` in flutter_demo
