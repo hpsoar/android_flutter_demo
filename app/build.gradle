@@ -29,4 +29,5 @@ dependencies {
     implementation depend['flutter']
     implementation depend['constraint']
     implementation depend['v7']
+    implementation depend['gson']
 }
