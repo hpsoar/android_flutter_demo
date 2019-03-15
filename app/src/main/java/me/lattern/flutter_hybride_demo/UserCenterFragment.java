@@ -25,5 +25,4 @@ public class UserCenterFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_center, container, false);
     }
-
 }
