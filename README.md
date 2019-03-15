@@ -19,3 +19,6 @@
       - `:flutter` is the android project generated in flutter_demo when you create the project
       - `:flutter_utils` is project for utils that make flutter easier to use in exsiting android project, you can go without it
       - one more thing, if you accidentally removed flutter_demo/.android or flutter_demo/.ios, run `flutter packages get` in flutter_demo
+      
+- TODO: create an initial version, branch
+  - with `flutter_demo` only
