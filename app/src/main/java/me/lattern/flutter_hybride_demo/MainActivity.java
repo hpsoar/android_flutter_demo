@@ -7,7 +7,7 @@ import android.os.Bundle;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.lattern.flutter_utils.CYFlutterFragment;
+import me.lattern.flutter_utils.bridge.flutter.CYFlutterFragment;
 import me.lattern.widgets.bar.MainBottomView;
 
 public class MainActivity extends AppCompatActivity {

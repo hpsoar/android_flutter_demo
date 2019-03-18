@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import me.lattern.widgets.bar.ActionBar;
+import me.lattern.widgets.bar.IActionBarBuilder;
 import me.lattern.widgets.page.BaseFragment;
 
 import static me.lattern.widgets.bar.ActionBar.FLAG_VISUAL_BACK;
@@ -18,7 +18,7 @@ import static me.lattern.widgets.bar.ActionBar.FLAG_VISUAL_BACK;
 public class HomeFragment extends BaseFragment {
 
     @Override
-    protected void onActionBar(ActionBar.Builder builder) {
+    protected void onActionBar(IActionBarBuilder builder) {
         builder.gone(FLAG_VISUAL_BACK).setTitle("主页");
     }
 
