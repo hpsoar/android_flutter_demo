@@ -23,7 +23,7 @@ public class WS {
             return convertor.convert(o, clazz);
         }
 
-        abstract void onResult(T data, Error error);
+        public abstract void onResult(T data, Error error);
     }
 
     private static IHttpClient client;

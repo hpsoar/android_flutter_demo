@@ -10,6 +10,7 @@ ext {
             flutter             : project(':flutter'),
             flutter_utils       : project(':flutter_utils'),
             core                : project(':core'),
+            network                : project(':network'),
             widgets             : project(':widgets')
     ]
     androids = [
