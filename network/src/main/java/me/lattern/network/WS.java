@@ -7,13 +7,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WS {
-    public static abstract class OnResultListener<T> implements IHttpClient.OnResultListener<T> {
+    public static abstract class OnResultListener<T> {
         public T convert(Object o, IDataConvertor convertor) {
             Class<T> clazz = ((Class<T>) ((ParameterizedType) getClass()
                     .getGenericSuperclass()).getActualTypeArguments()[0]);
 
             return convertor.convert(o, clazz);
         }
+
+        abstract void onResult(T data, Error error);
     }
 
     private static IHttpClient client;
@@ -26,7 +28,8 @@ public class WS {
     private Context context_;
     private String url_;
     private Map<String, Object> parameters_;
-    private String method_;
+    private IHttpClient.Method method_;
+    private IHttpClient.RequestBodyType requestBodyType_;
 
     /*
      * independent on network data type,
@@ -49,11 +52,11 @@ public class WS {
     }
 
     public static WS get(String url) {
-        return new WS(null).method("GET");
+        return new WS(null).method(IHttpClient.Method.GET);
     }
 
     public static WS post(String url) {
-        return new WS(null).method("POST");
+        return new WS(null).method(IHttpClient.Method.POST);
     }
 
     public WS url(String url) {
@@ -75,21 +78,26 @@ public class WS {
         return this;
     }
 
-    public WS method(String method) {
+    public WS method(IHttpClient.Method method) {
         method_ = method;
         return this;
     }
 
+    public WS requestBodyType(IHttpClient.RequestBodyType requestBodyType) {
+        requestBodyType_ = requestBodyType;
+        return this;
+    }
+
     public <T> void get(String url, Map<String, Object> parameters, OnResultListener<T> listener) {
-        request(url, parameters, "GET", listener);
+        method(IHttpClient.Method.GET).url(url).parameters(parameters).request(listener);
     }
 
     public <T> void post(String url, Map<String, Object> parameters,  OnResultListener<T> listener) {
-        request(url, parameters, "POST", listener);
+        method(IHttpClient.Method.POST).url(url).parameters(parameters).request(listener);
     }
 
-    private <T> void request(String url, Map<String, Object> parameters, String method, final OnResultListener<T> listener) {
-        client.request(context_, url, parameters, method, new IHttpClient.OnResultListener() {
+    private <T> void request(final OnResultListener<T> listener) {
+        client.request(context_, url_, parameters_, method_, requestBodyType_,new IHttpClient.OnResultListener() {
             @Override
             public void onResult(Object data, Error error) {
                 T r = listener.convert(data, dataConvertor);
@@ -100,8 +108,7 @@ public class WS {
 
     public <T> void start(Context context, OnResultListener<T> listener) {
         context_ = context;
-
-        request(url_, parameters_, method_, listener);
+        request(listener);
     }
 
     public void test() {

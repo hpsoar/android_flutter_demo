@@ -5,6 +5,7 @@ ext {
             gson              : 'com.google.code.gson:gson:2.7',
             butterknife          : 'com.jakewharton:butterknife:8.4.0',
             butterknifeCompile   : 'com.jakewharton:butterknife-compiler:8.4.0',
+            okhttp               : 'com.squareup.okhttp3:okhttp:3.9.1',
 
             flutter             : project(':flutter'),
             flutter_utils       : project(':flutter_utils'),
