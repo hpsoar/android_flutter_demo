@@ -10,3 +10,6 @@
 [submodule "core"]
 	path = core
 	url = https://github.com/hpsoar/android_utils.git
+[submodule "network"]
+	path = network
+	url = https://github.com/hpsoar/network_android.git
