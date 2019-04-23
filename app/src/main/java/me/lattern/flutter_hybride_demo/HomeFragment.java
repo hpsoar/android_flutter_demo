@@ -18,8 +18,8 @@ import static me.lattern.widgets.bar.ActionBar.FLAG_VISUAL_BACK;
 public class HomeFragment extends BaseFragment {
 
     @Override
-    protected void onActionBar(IActionBarBuilder builder) {
-        builder.gone(FLAG_VISUAL_BACK).setTitle("主页");
+    protected void onCompleteLayout() {
+        getPage().getActionBarBuilder().gone(IActionBarBuilder.FLAG_VISUAL_BACK).setTitle("主页");
     }
 
     @Override
