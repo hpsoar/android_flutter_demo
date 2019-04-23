@@ -6,6 +6,14 @@ import java.lang.reflect.ParameterizedType;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * 1. global configuration
+ *      1. client: setClient
+ *      2. data convertor: setDataConvertor
+ * 2. request-wise configuration
+ *      1. client: TODO:
+ *      2. data convertor: override OnResultListener.convert
+ */
 public class WS {
     public static abstract class OnResultListener<T> {
         public T convert(Object o, IDataConvertor convertor) {
@@ -47,16 +55,12 @@ public class WS {
         WS.client = client;
     }
 
-    public WS(Context context) {
-        context_ = context;
-    }
-
     public static WS get(String url) {
-        return new WS(null).method(IHttpClient.Method.GET);
+        return new WS().method(IHttpClient.Method.GET);
     }
 
     public static WS post(String url) {
-        return new WS(null).method(IHttpClient.Method.POST);
+        return new WS().method(IHttpClient.Method.POST);
     }
 
     public WS url(String url) {
@@ -88,15 +92,11 @@ public class WS {
         return this;
     }
 
-    public <T> void get(String url, Map<String, Object> parameters, OnResultListener<T> listener) {
-        method(IHttpClient.Method.GET).url(url).parameters(parameters).request(listener);
-    }
-
-    public <T> void post(String url, Map<String, Object> parameters,  OnResultListener<T> listener) {
-        method(IHttpClient.Method.POST).url(url).parameters(parameters).request(listener);
-    }
-
     private <T> void request(final OnResultListener<T> listener) {
+        method_ = method_ == null ? IHttpClient.Method.GET : method_;
+
+        requestBodyType_ = requestBodyType_ == null ? IHttpClient.RequestBodyType.JSON : requestBodyType_;
+
         client.request(context_, url_, parameters_, method_, requestBodyType_,new IHttpClient.OnResultListener() {
             @Override
             public void onResult(Object data, Error error) {
@@ -112,13 +112,6 @@ public class WS {
     }
 
     public void test() {
-        new WS(null).get(null, null, new OnResultListener<WS>() {
-            @Override
-            public void onResult(WS data, Error error) {
-
-            }
-        });
-
         WS.get(null).parameters(null).start(null, new OnResultListener<WS>() {
             @Override
             public void onResult(WS data, Error error) {
