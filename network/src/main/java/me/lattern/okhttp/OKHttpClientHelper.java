@@ -120,6 +120,9 @@ public class OKHttpClientHelper implements IHttpClient {
         return body;
     }
 
+    /*
+     * TODO: request-wise body type?
+     */
     protected HttpUrl.Builder createUrlBuilder(String url, Map<String, Object> parameters, RequestBodyType bodyType) {
         HttpUrl.Builder httpBuilder = HttpUrl.parse(url).newBuilder();
 
