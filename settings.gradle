@@ -1,4 +1,4 @@
-include ':app', ':flutter_utils', ':core', ':widgets'
+include ':app', ':flutter_utils', ':core', ':widgets', ':network'
 
 // setup flutter
 setBinding(new Binding([gradle: this]))
